@@ -1,8 +1,8 @@
+![](static/title.png)
+
 # 即刻非官方果果名片生成器
 
 > Custom jike name badge, meow. 🐱
-
-![](https://i.loli.net/2018/11/20/5bf414b72d5ac.png)
 
 ## Build Setup
 
