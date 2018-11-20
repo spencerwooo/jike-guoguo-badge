@@ -2,7 +2,12 @@
 
 # 即刻非官方果果名片生成器
 
-> Custom jike name badge, meow. 🐱
+![](https://img.shields.io/badge/Nuxt.js-2.0.0-green.svg?style=flat-square)
+[![GitHub stars](https://img.shields.io/github/stars/spencerwooo/jike-guoguo-badge.svg?style=flat-square&label=stars)](https://github.com/spencerwoo/jike-guoguo-badge)
+![love](https://img.shields.io/badge/Made%20with-love-ff69b4.svg?style=flat-square)
+[![License MIT](https://img.shields.io/badge/License-MIT-03A9F4.svg?style=flat-square)](https://github.com/spencerwooo/jike-guoguo-badge/blob/master/LICENSE)
+
+> **Custom Jike name badge, meow.** 🐱
 
 ## Build Setup
 
@@ -22,6 +27,10 @@ $ yarn run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+## Notice
+
+主开发者常鸽，后端跑了，设计师是白嫖的，大家敬请期待。
 
 ---
 
