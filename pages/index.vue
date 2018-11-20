@@ -1,37 +1,40 @@
 <template>
   <section class="container">
-    <div class="badge-content">
-      <Badge/>
-      <div class="after-canvas">
-        <h1 class="title">
-          喵，即刻生成你的名片
-        </h1>
-        <h2 class="subtitle">
-          即刻非官方果果名片
-        </h2>
-        <input class="jike-name-input" type="text" placeholder="还请填入你的即刻主页链接(｡･∀･)ﾉﾞ">
-        <div class="links">
-          <a
-            href="/"
-            target="_blank"
-            class="button--blue">即刻生成</a>
-          <a
-            href="https://github.com/spencerwooo/jike-guoguo-badge"
-            target="_blank"
-            class="button--grey">GitHub</a>
+    <section class="badge-content">
+      <div>
+        <Badge/>
+        <div class="after-canvas">
+          <h1 class="title">
+            喵，即刻生成你的名片
+          </h1>
+          <h2 class="subtitle">
+            即刻非官方果果名片
+          </h2>
+          <input class="jike-name-input" type="text" placeholder="还请填入你的即刻主页链接 (｡･∀･)ﾉﾞ">
+          <div class="links">
+            <a
+              href="/"
+              target="_blank"
+              class="button--blue">即刻生成</a>
+            <a
+              href="https://github.com/spencerwooo/jike-guoguo-badge"
+              target="_blank"
+              class="button--grey">GitHub</a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+  <Footer/>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Footer from '~/components/Footer.vue'
 import Badge from '~/components/Badge.vue'
 
 export default {
   components: {
-    Logo,
+    Footer,
     Badge
   }
 }
@@ -39,17 +42,14 @@ export default {
 
 <style>
 .badge-content {
-	-webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-
-}
-
-.container {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+	-webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+
 }
 
 .after-canvas {

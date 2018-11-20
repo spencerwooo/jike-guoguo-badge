@@ -6,7 +6,7 @@
 
 <style>
 #badge-demo {
-    max-width: 350px;
+    max-width: 370px;
     /* border: 1px solid black; */
     background-repeat: no-repeat;
     background-position: center;
@@ -14,6 +14,6 @@
 }
 
 .demo {
-    width: 330px;
+    width: 360px;
 }
 </style>
