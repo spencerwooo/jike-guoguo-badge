@@ -2,7 +2,7 @@
 
 > Custom jike name badge, meow. 🐱
 
-![](https://i.loli.net/2018/11/20/5bf3cbe7f2d60.png)
+![](https://i.loli.net/2018/11/20/5bf414b72d5ac.png)
 
 ## Build Setup
 
