@@ -35,7 +35,7 @@ body {
   color: #fff;
   background-color: #01a9f4;
   text-decoration: none;
-  padding: 10px 30px;
+  padding: 12px 30px;
 }
 
 .button--blue:hover {
@@ -50,7 +50,7 @@ body {
   color: #fff;
   background-color: #24292e;
   text-decoration: none;
-  padding: 10px 30px;
+  padding: 12px 30px;
   margin-left: 15px;
 }
 
