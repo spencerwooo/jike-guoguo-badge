@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <section class="badge-content">
+    <div class="badge-content">
       <div>
         <Badge/>
         <div class="after-canvas">
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
   <Footer/>
   </section>
 </template>
@@ -60,14 +60,14 @@ export default {
 .title {
   font-family: sans-serif;
   display: block;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 28px;
   color: #24292e;
   letter-spacing: 1px;
 }
 
 .subtitle {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 18px;
   color: #9b9b9b;
   /* word-spacing: 5px; */
@@ -75,15 +75,16 @@ export default {
 }
 
 .jike-name-input {
-  width: 255px;
+  width: 257px;
   height: 50px;
   line-height: 50px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
   border: none;
   margin-top: 100px;
   border-radius: 4px;
+  color: #9b9b9b;
 }
 
 .links {

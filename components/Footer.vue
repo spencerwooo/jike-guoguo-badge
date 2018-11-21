@@ -6,7 +6,6 @@
 </template>
 
 <style>
-
 .footer {
   padding: 50px;
   text-align: center;
@@ -17,5 +16,11 @@
   background-repeat: repeat-x;
   background-size: contain;
   background-image: url("~assets/backgrounds/background-svg.png");
+}
+
+@media screen and (max-width: 361px) {
+    .footer {
+      font-size: 13px;
+    }
 }
 </style>
