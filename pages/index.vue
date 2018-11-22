@@ -34,6 +34,7 @@
 <script>
 import Footer from "~/components/Footer.vue";
 import Badge from "~/components/Badge.vue";
+import axios from 'axios';
 
 export default {
   components: {
@@ -53,6 +54,15 @@ export default {
       // alert(JSON.stringify(this.form));
       var jikeUUID = this.form.jikeid.toString().split("user/")[1].split("?ref")[0];
       console.log(jikeUUID);
+
+      // var rootAPIUrl = 'http://39.106.10.62:8080/infor'
+      var rootAPIUrl = 'https://jsonplaceholder.typicode.com/todos/1'
+      // Test axios module
+      axios.get(rootAPIUrl).then(function (response){
+        console.log(response.data.title);
+      }).catch(function (error) {
+        console.log(error);
+      });
       return jikeUUID;
     }
   }
