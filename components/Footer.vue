@@ -1,8 +1,8 @@
 <template>
-<div class="footer">
-  <i class="fa fa-id-badge" aria-hidden="true"></i> Unofficial Jike GuoGuo badge<br>
-  Love <i class="fa fa-heart" aria-hidden="true"></i> from ⒿSpencerWoo ©2018
-</div>
+  <div class="footer">
+    <i class="fa fa-id-badge" aria-hidden="true"></i> Unofficial Jike GuoGuo badge<br>
+    Love <i class="fa fa-heart" aria-hidden="true"></i> from ⒿSpencerWoo ©2018
+  </div>
 </template>
 
 <style>
@@ -19,8 +19,8 @@
 }
 
 @media screen and (max-width: 361px) {
-    .footer {
-      font-size: 13px;
-    }
+  .footer {
+    font-size: 13px;
+  }
 }
 </style>
