@@ -39,11 +39,11 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       user: {
-        screenName: 'SpencerWoo',
-        bio: 'bio',
+        screenName: "SpencerWoo",
+        bio: "bio",
         isVerified: userInfo.isVerified,
         verifyMessage: userInfo.verifyMessage,
         medals: userInfo.medals,
@@ -54,7 +54,7 @@ export default {
         },
         registerTime: registerTime
       }
-    }
+    };
   }
 };
 </script>
@@ -189,15 +189,4 @@ export default {
   font-size: 9px;
   color: #b3b3b3;
 }
-
-/* @media screen and (min-width: 415px) {
-  #badge-canvas {
-    width: 414px;
-    height: 233px;
-  }
-  .demo {
-    width: 414px;
-    height: 233px;
-  }
-} */
 </style>

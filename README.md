@@ -1,4 +1,4 @@
-![](static/title.png)
+![](https://i.loli.net/2018/11/26/5bfba92262d75.jpg)
 
 # 即刻非官方果果名片生成器
 
@@ -29,6 +29,8 @@ $ yarn run generate
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
 
 ## Notice
+
+**为了保证分辨率，未考虑在手机端进行生成，请在桌面端使用。**
 
 主开发者常鸽，后端跑了，设计师是白嫖的，大家敬请期待。
 

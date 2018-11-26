@@ -1,7 +1,6 @@
 <template>
   <section class="container">
     <div class="badge-content">
-      <div>
         <div id="badge-canvas">
           <div class="name-badge-canvas">
             <div class="user-avatar">
@@ -10,18 +9,18 @@
             <div class="user-info-container">
               <div class="user-name">{{ userinfo.screenName }}</div>
               <div class="user-verified-container">
-                <img v-bind:src="userinfo.verifyIcon" width="14px" style="vertical-align: middle; margin-right: 5px; margin-bottom: 4px;"/><span>{{ userinfo.verifyMessage}}</span>
+                <img v-bind:src="userinfo.verifyIcon" width="28px" style="vertical-align: middle; margin-right: 5px; margin-bottom: 8px;"/><span>{{ userinfo.verifyMessage}}</span>
               </div>
               <div class="user-like-info">
-                关注他的人 {{ userinfo.statsCount.following }} | 他关注的人 {{ userinfo.statsCount.followed }}
+                关注 {{ userinfo.statsCount.following }} | 粉丝 {{ userinfo.statsCount.followed }}
               </div>  
             </div>
             <div class="user-bottomleft-container">
               <div class="user-bio" v-html="userinfo.bio"></div>
               <div class="user-playground-container">
-                <div class="user-playground"># 今日份的摄影</div>
-                <div class="user-playground"># JitHub</div>
-                <div class="user-playground"># 即刻数码站</div>
+                <div class="user-playground"># {{ form.userplayground1 }}</div>
+                <div class="user-playground"># {{ form.userplayground2 }}</div>
+                <div class="user-playground"># {{ form.userplayground3 }}</div>
               </div>
             </div>
             <div class="user-bottomright-container">
@@ -29,12 +28,13 @@
                 <canvas id="user-qr-code" />
               </div>
               <div class="user-follow-slogan">
-                  <span class="name">下载即刻 App 搜索<br>👉{{ userinfo.screenName }}</span><br>
-                  <span class="copyright">Made with ♥ by ⒿSpencerWoo</span>
+                <span class="name">{{ userfollowslogan }}</span><br>
+                <span class="copyright">♥ from ⒿSpencerWoo</span>
               </div>
             </div>
+            <img id="guoguo" src="~/assets/backgrounds/guoguo.png" alt="guoguo-guoguo">
             <div class="user-topright-container">
-                已加入即刻社区 {{ userinfo.registerTime }} 天
+              已加入即刻社区 {{ userinfo.registerTime }} 天
             </div>
           </div>
         </div>
@@ -47,7 +47,15 @@
           </h2>
           
           <form @submit="onSubmit" action="#" method="get">
-            <input id="jike-name-input" v-model="form.jikeid" type="text" placeholder="还请填入你的即刻主页链接 (｡･∀･)ﾉﾞ"/>
+            <br>
+            <label for="jike-name-input">Jike User Name</label><br>
+            <input id="jike-name-input" v-model="form.jikeid" type="text" placeholder="还请填入你的即刻用户名 (｡･∀･)ﾉﾞ"/><br>
+
+            <br>
+            <label for="jike-name-input">Jike Playgrounds</label><br>
+            <input id="jike-playground-input" v-model="form.userplayground1" type="text" placeholder="还请填入 (｡･∀･)ﾉﾞ"/><br>
+            <input id="jike-playground-input" v-model="form.userplayground2" type="text" placeholder="三个你常看的 (｡･∀･)ﾉﾞ"/><br>
+            <input id="jike-playground-input" v-model="form.userplayground3" type="text" placeholder="即刻主题名字 (｡･∀･)ﾉﾞ"/>
             <div class="buttons">
               <button
                 id="generate-btn"
@@ -57,10 +65,13 @@
                 href="https://github.com/spencerwooo/jike-guoguo-badge"
                 class="button--grey">GitHub</a>
             </div>
+            <button
+                id="download-btn"
+                type="submit"
+                v-on:click="onDownload"
+                class="button--blue">下载名片</button>
           </form>
-          
         </div>
-      </div>
     </div>
   <Footer/>
   </section>
@@ -82,8 +93,12 @@ export default {
   data() {
     return {
       form: {
-        jikeid: ""
+        jikeid: "",
+        userplayground1: "今日份的摄影",
+        userplayground2: "JitHub",
+        userplayground3: "即刻数码站"
       },
+      userfollowslogan: "下载即刻 App 搜索 👉 SpencerWoo",
       userinfo: {
         username: "4DDA0425-FB41-4188-89E4-952CA15E3C5E",
         screenName: "SpencerWoo",
@@ -124,6 +139,7 @@ export default {
         console.log(error);
       }
 
+      // when user is not verified, use medal instead
       this.userinfo = userdata.data;
       var userHomePageUrl =
         "https://m.okjike.com/user/" + this.userinfo.username;
@@ -135,19 +151,30 @@ export default {
           .replace("”", "」");
       }
 
+      this.userfollowslogan =
+        "下载即刻 App 搜索 👉 " + this.userinfo.screenName;
+      if (this.userfollowslogan.length > 30) {
+        this.userfollowslogan = this.userfollowslogan.substring(0, 30) + "...";
+      }
+      console.log(this.userfollowslogan);
+
+      // generate user qrcode
       var canvas = document.getElementById("user-qr-code");
       var qrcodeConfig = {
         color: {
           dark: "#02a9f3",
           light: "#fff"
         },
-        width: 90
+        margin: 0,
+        width: 162
       };
       QRCode.toCanvas(canvas, userHomePageUrl, qrcodeConfig, function(error) {
         if (error) console.error(error);
         console.log("success!");
       });
-
+    },
+    onDownload() {
+      // save image to device
       var finalBadge = document.getElementById("badge-canvas");
       domtoimage.toPng(finalBadge).then(function(blob) {
         window.saveAs(blob, "jike-guoguo-badge.png");
@@ -158,29 +185,26 @@ export default {
 </script>
 
 <style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+label {
+  font-weight: 800;
+  font-style: italic;
 }
 
 .badge-content {
   min-height: 100vh;
+  min-width: 1500px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
   -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1)
     both;
   animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 #badge-canvas {
-  width: 640px;
-  height: 360px;
+  width: 1230px;
+  height: 691px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,13 +213,14 @@ export default {
   background-repeat: repeat-x;
   background-position: center;
   background-image: url("~assets/backgrounds/bg.png");
+  /* zoom: 0.5; */
 }
 
 .name-badge-canvas {
-  width: 594px;
-  height: 297px;
-  border-radius: 15px;
-  box-shadow: 0 0 30px rgba(40, 40, 40, 0.3);
+  width: 1064px;
+  height: 517px;
+  border-radius: 30px;
+  box-shadow: 0 0 60px rgba(40, 40, 40, 0.3);
   background-color: #fff;
   overflow: hidden;
   background-image: url("");
@@ -204,55 +229,52 @@ export default {
   position: relative;
 }
 
-.demo {
-  width: 320px;
-}
-
 .user-avatar {
-  width: 60px;
-  height: 60px;
+  width: 108px;
+  height: 108px;
   float: left;
-  margin: 37px 0 0 33px;
-  border: #fbdf26 solid 1px;
-  border-radius: 30px;
+  margin: 66px 0 0 56px;
+  border: #fbdf26 solid 2px;
+  border-radius: 54px;
   background-color: #fff;
-  box-shadow: 0 0 20px rgba(251, 223, 38, 0.3);
+  box-shadow: 0 0 40px rgba(251, 223, 38, 0.3);
   background-size: contain;
 }
 
 .user-avatar-image {
-  border-radius: 30px;
-  width: 59px;
-  height: 59px;
+  border-radius: 52px;
+  width: 104px;
+  height: 104px;
 }
 
 .user-info-container {
-  margin: 36px 0 0 120px;
+  margin: 66px 0 0 221px;
   text-align: left;
 }
 
 .user-name {
-  font-size: 24px;
+  font-size: 42px;
   font-weight: bold;
+  max-width: 600px;
 }
 
 .user-verified-container {
-  font-size: 12px;
+  font-size: 21px;
   vertical-align: middle;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 .user-like-info {
-  font-size: 12px;
+  font-size: 21px;
   color: #b3b3b3;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 .user-bottomleft-container {
   position: absolute;
-  font-size: 12px;
-  bottom: 24px;
-  left: 30px;
+  font-size: 21px;
+  bottom: 42px;
+  left: 55px;
   text-align: left;
 }
 
@@ -261,67 +283,74 @@ export default {
 }
 
 .user-playground-container {
-  margin-top: 18px;
+  margin-top: 30px;
 }
 
 .user-playground {
-  padding: 4px 12px;
-  border-radius: 5px;
+  padding: 7px 20px;
+  border-radius: 10px;
   background-color: #fff;
-  margin-right: 8px;
-  box-shadow: 0 0 20px rgba(40, 40, 40, 0.1);
+  margin-right: 12px;
+  box-shadow: 0 0 40px rgba(40, 40, 40, 0.1);
   display: inline;
+}
+
+#guoguo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 120px;
+  transform: rotate(40deg);
 }
 
 .user-topright-container {
   position: absolute;
   background-color: #01a9f4;
   color: #fff;
-  font-size: 12px;
-  top: 45px;
-  right: -50px;
+  font-size: 21px;
+  top: 90px;
+  right: -100px;
   transform: rotate(40deg);
-  padding: 5px 60px;
+  padding: 9px 110px;
   overflow: hidden;
   text-align: center;
 }
 
 .user-bottomright-container {
   position: absolute;
-  font-size: 12px;
-  bottom: 23px;
-  right: 31px;
+  font-size: 21px;
+  bottom: 42px;
+  right: 56px;
   text-align: right;
 }
 
 .user-qrcode-container {
   float: right;
-  width: 90px;
-  height: 90px;
-  right: 20px;
-  background-color: #b3b3b3;
+  width: 162px;
+  height: 162px;
 }
 
 .user-follow-slogan {
-  margin-top: 100px;
+  max-width: 400px;
+  max-height: 300px;
+  line-height: 1.6;
+  margin-top: 180px;
 }
 
 .user-follow-slogan .name {
-  font-size: 12px;
+  font-size: 21px;
 }
 
 .user-follow-slogan .copyright {
-  font-size: 9px;
+  font-size: 16px;
   color: #b3b3b3;
 }
 
 .after-canvas {
-  margin-top: 30px;
-  text-align: center;
+  text-align: left;
 }
 
 .title {
-  font-family: sans-serif;
   display: block;
   font-weight: 900;
   font-size: 28px;
@@ -345,18 +374,41 @@ export default {
   font-weight: 400;
   text-align: center;
   border: none;
-  margin-top: 100px;
+  margin-top: 10px;
+  border-radius: 4px;
+  color: #9b9b9b;
+}
+
+#jike-playground-input {
+  width: 257px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  border: none;
+  margin-top: 10px;
   border-radius: 4px;
   color: #9b9b9b;
 }
 
 .buttons {
-  padding-top: 15px;
+  margin-top: 50px;
+  margin-bottom: 15px;
 }
 
 #generate-btn {
   font-size: 16px;
   cursor: pointer;
+}
+
+#download-btn {
+  font-size: 16px;
+  cursor: pointer;
+  width: 257px;
+  height: 50px;
+  font-weight: 400;
+  text-align: center;
 }
 /* ----------------------------------------------
  * Generated by Animista on 2018-11-20 20:45:18
