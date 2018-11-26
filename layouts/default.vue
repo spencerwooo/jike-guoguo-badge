@@ -36,11 +36,13 @@ body {
   background-color: #01a9f4;
   text-decoration: none;
   padding: 12px 30px;
+  transition-duration: 0.5s;
 }
 
 .button--blue:hover {
-  color: #fff;
-  background-color: #01a9f4;
+  color: #01a9f4;
+  background-color: #fff;
+  transition-duration: 0.5s;
 }
 
 .button--grey {
@@ -52,10 +54,12 @@ body {
   text-decoration: none;
   padding: 12px 30px;
   margin-left: 15px;
+  transition-duration: 0.5s;
 }
 
 .button--grey:hover {
-  color: #fff;
-  background-color: #24292e;
+  color: #24292e;
+  background-color: #fff;
+  transition-duration: 0.5s;
 }
 </style>
