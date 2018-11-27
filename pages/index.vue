@@ -362,7 +362,7 @@ label {
 .subtitle {
   font-weight: 600;
   font-style: italic;
-  font-size: 15px;
+  font-size: 14px;
   color: #808080;
   /* word-spacing: 5px; */
   padding: 15px 0;

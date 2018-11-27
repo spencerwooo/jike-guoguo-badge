@@ -38,6 +38,6 @@ For detailed explanation on how things work, checkout [Nuxt.js docs](https://nux
 
 💡 **Jike GuoGuo Name Badge** ©Spencer Woo. Released under the [MIT](https://github.com/spencerwooo/jike-guoguo-badge/blob/master/LICENSE) License. Name badge designs are released under the [CC BY-NC-SA 4.0 License.](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-Authored and maintained by Spencer Woo. Co-designed by [ⒿTH3EE](https://web.okjike.com/user/E0BBAACD-3991-49E3-916C-6A67430380A7).
+Authored and maintained by Spencer Woo. Co-designed by [ⒿTH3EE](https://web.okjike.com/user/E0BBAACD-3991-49E3-916C-6A67430380A7) && [ⒿGezee](https://web.okjike.com/user/BC3E16C6-CDB5-420C-99AB-69978E1C9CBC).
 
-[@Blog](https://spencerwoo.com/) · [ⒿJike](https://web.okjike.com/user/4DDA0425-FB41-4188-89E4-952CA15E3C5E/post) · [@GitHub](https://github.com/spencerwooo)
+[@Blog](https://spencerwoo.com/) · [ⒿJike](https://web.okjike.com/user/4DDA0425-FB41-4188-89E4-952CA15E3C5E) · [@GitHub](https://github.com/spencerwooo)
