@@ -26,7 +26,9 @@
               </div>
             </div>
             <img id="guoguo" src="~/assets/backgrounds/guoguo.png" alt="guoguo-guoguo">
-            <div class="user-topright-container">已加入即刻社区 {{ userinfo.registerTime }} 天</div>
+            <div class="user-topright-container">
+              <div>已加入即刻社区 {{ userinfo.registerTime }} 天</div>
+            </div>
             <div class="user-bottomright-container">
               <div class="user-qrcode-container" v-html="qrcodesvg"></div>
               <div class="user-follow-slogan">
@@ -106,7 +108,7 @@ export default {
       evt.preventDefault();
       this.loading = false;
       var jikeid = this.form.jikeid;
-      var jikeLittleApi = "http://localhost:9000/api/jike/";
+      var jikeLittleApi = "http://tenkeyseven.com:9000/api/jike/";
       var userdata;
 
       // Test axios module
@@ -288,12 +290,13 @@ label {
   position: absolute;
   background-color: #01a9f4;
   color: #fff;
-  font-size: 21px;
+  font-size: 20px;
+  display: inline-block;
   top: 90px;
   right: -100px;
   transform: rotate(40deg);
-  padding: 9px 120px;
-  overflow: hidden;
+  padding: 10px 120px;
+  /* overflow: hidden; */
   text-align: center;
 }
 
