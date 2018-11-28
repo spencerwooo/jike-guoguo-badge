@@ -100,7 +100,7 @@ export default {
         },
         registerTime: "好多"
       },
-      qrcodesvg: '<img src="/icon.png" width="162px" height="162px">'
+      qrcodesvg: '<img src="/jike-guoguo-badge/icon.png" width="162px" height="162px">'
     };
   },
   methods: {
