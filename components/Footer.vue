@@ -2,6 +2,7 @@
   <div class="footer">
     <i class="fa fa-id-badge" aria-hidden="true"></i> Unofficial Jike GuoGuo badge<br>
     Co-designed by <a href="https://web.okjike.com/user/E0BBAACD-3991-49E3-916C-6A67430380A7">ⒿTH3EE</a> and <a href="https://web.okjike.com/user/BC3E16C6-CDB5-420C-99AB-69978E1C9CBC">ⒿGezee</a><br>
+    APIs served by <a href="https://web.okjike.com/user/B017F770-D1E4-404A-B543-4333E90FF26A">ⒿTenkeySeven</a> via Alibaba Cloud<br>
     Love <i class="fa fa-heart" aria-hidden="true"></i> from <a href="https://web.okjike.com/user/4DDA0425-FB41-4188-89E4-952CA15E3C5E">ⒿSpencerWoo</a> ©2018
   </div>
 </template>
