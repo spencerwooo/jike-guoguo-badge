@@ -1,23 +1,21 @@
 <template>
   <section class="container">
     <div class="badge-content">
-        <div id="badge-canvas">
-          <transition name="fade">
+      <div id="badge-canvas">
+        <transition name="fade">
           <div id="name-badge-canvas" v-if="loading">
             <div class="user-avatar">
-              <img class="user-avatar-image" v-bind:src="userinfo.avatarImage" alt="User avatar"/>
+              <img class="user-avatar-image" v-bind:src="userinfo.avatarImage" alt="User avatar">
             </div>
             <div class="user-info-container">
-              <div class="user-name">
-                {{ userinfo.screenName }}
-              </div>
+              <div class="user-name">{{ userinfo.screenName }}</div>
               <div class="user-verified-container">
-                <img v-bind:src="userinfo.verifyIcon" width="28px" style="vertical-align: middle; margin-right: 5px; margin-bottom: 8px;"/>
+                <img v-bind:src="userinfo.verifyIcon" width="28px" style="vertical-align: middle; margin-right: 5px; margin-bottom: 8px;">
                 <span>{{ userinfo.verifyMessage}}</span>
               </div>
               <div class="user-like-info">
-                关注 {{ userinfo.statsCount.following }} | 粉丝 {{ userinfo.statsCount.followed }}
-              </div>  
+               {{ userinfo.statsCount.following }} 关注 | {{ userinfo.statsCount.followed }} 粉丝 | {{ userinfo.statsCount.liked }} 赞同 | {{ userinfo.statsCount.editorPicked}} 次精选
+              </div>
             </div>
             <div class="user-bottomleft-container">
               <div class="user-bio" v-html="userinfo.bio"></div>
@@ -28,55 +26,38 @@
               </div>
             </div>
             <img id="guoguo" src="~/assets/backgrounds/guoguo.png" alt="guoguo-guoguo">
-            <div class="user-topright-container">
-              已加入即刻社区 {{ userinfo.registerTime }} 天
-            </div>
+            <div class="user-topright-container">已加入即刻社区 {{ userinfo.registerTime }} 天</div>
             <div class="user-bottomright-container">
-              <div class="user-qrcode-container" v-html="qrcodesvg">
-              </div>
+              <div class="user-qrcode-container" v-html="qrcodesvg"></div>
               <div class="user-follow-slogan">
-                <span class="name">{{ userfollowslogan }}</span><br>
-                <span class="copyright">♥ from ⒿSpencerWoo</span>
+                <div class="name">👉 扫描二维码，即刻加我</div>
+                <div class="copyright">♥ from ⒿSpencerWoo</div>
               </div>
             </div>
           </div>
-          </transition>
-        </div>
-        <div class="after-canvas">
-          <h1 class="title">
-            喵，即刻生成你的名片
-          </h1>
-          <h2 class="subtitle">
-            Unofficial Jike GuoGuo name badge
-          </h2>
-          
-          <form @submit="onSubmit" action="#" method="get">
-            <br>
-            <label for="jike-name-input">Jike User Name</label><br>
-            <input id="jike-name-input" v-model="form.jikeid" type="text" placeholder="(｡･∀･)ﾉﾞ"/><br>
-            <br>
-            <label for="jike-name-input">Jike Playgrounds</label><br>
-            <input id="jike-playground-input" v-model="form.userplayground1" type="text" placeholder="o(=•ェ•=)m"/><br>
-            <input id="jike-playground-input" v-model="form.userplayground2" type="text" placeholder="( •̀ ω •́ )✧"/><br>
-            <input id="jike-playground-input" v-model="form.userplayground3" type="text" placeholder="q(≧▽≦q)"/>
-            <div class="buttons">
-              <button
-                id="generate-btn"
-                type="submit"
-                class="button--blue">即刻生成</button>
-              <a
-                href="https://github.com/spencerwooo/jike-guoguo-badge"
-                class="button--grey">GitHub</a>
-            </div>
-            <button
-                id="download-btn"
-                type="submit"
-                v-on:click="onDownload"
-                class="button--blue">下载名片</button>
-          </form>
-        </div>
+        </transition>
+      </div>
+      <div class="after-canvas">
+        <h1 class="title">喵，即刻生成你的名片</h1>
+        <h2 class="subtitle">Unofficial Jike GuoGuo name badge</h2>
+        <form @submit="onSubmit" action="#" method="get">
+          <br>
+          <label for="jike-name-input">Jike User Name</label><br>
+          <input id="jike-name-input" v-model="form.jikeid" type="text" placeholder="(｡･∀･)ﾉﾞ"><br>
+          <br>
+          <label for="jike-name-input">Jike Playgrounds</label><br>
+          <input id="jike-playground-input" v-model="form.userplayground1" type="text" placeholder="o(=•ェ•=)m"><br>
+          <input id="jike-playground-input" v-model="form.userplayground2" type="text" placeholder="( •̀ ω •́ )✧"><br>
+          <input id="jike-playground-input" v-model="form.userplayground3" type="text" placeholder="q(≧▽≦q)">
+          <div class="buttons">
+            <button id="generate-btn" type="submit" class="button--blue">即刻生成</button>
+            <a href="https://github.com/spencerwooo/jike-guoguo-badge" class="button--grey">GitHub</a>
+          </div>
+          <button id="download-btn" type="submit" v-on:click="onDownload" class="button--blue">下载名片</button>
+        </form>
+      </div>
     </div>
-  <Footer/>
+    <Footer/>
   </section>
 </template>
 
@@ -100,26 +81,24 @@ export default {
         userplayground2: "JitHub",
         userplayground3: "即刻数码站"
       },
-      userfollowslogan: "下载即刻 App 搜索 👉 SpencerWoo",
       userinfo: {
         username: "4DDA0425-FB41-4188-89E4-952CA15E3C5E",
         screenName: "SpencerWoo",
-        bio:
-          "Ⓙ瓦恁 等五百万人关注了他 ➭ <br> 一手键盘⌨️ / 一支相机📷 / 一把猫毛🐱 <br><br>啊呀，你发现了这个果果名片生成器！q(≧▽≦q)<br> 右边三个主题随便填哦 (*￣3￣)╭",
+        bio: "🐱 啊呀，你发现了这个果果名片生成器！q(≧▽≦q)<br> 🦊 右边三个主题随便填哦 (*￣3￣)╭",
         isVerified: true,
         verifyMessage: "各种话题优秀贡献者 \\(￣︶￣*\\))",
-        verifyIcon:
-          "https://cdn.ruguoapp.com/jike-web/static/images/verified.6e5b91e.svg",
+        verifyIcon: "https://cdn.ruguoapp.com/jike-web/static/images/verified.6e5b91e.svg",
         medals: [],
-        avatarImage:
-          "https://cdn.ruguoapp.com/FtuW2cr-elNtq2O4EMQ1EZJFb4Pw.jpg?imageView2/0/w/300/h/300/q/100!",
+        avatarImage: "https://cdn.ruguoapp.com/FtuW2cr-elNtq2O4EMQ1EZJFb4Pw.jpg?imageView2/0/w/300/h/300/q/100!",
         statsCount: {
           followed: "500 万",
-          following: 374
+          following: 374,
+          editorPicked: 73,
+          liked: '27.5k'
         },
         registerTime: "好多"
       },
-      qrcodesvg: "<img src=\"/icon.png\" width=\"162px\" height=\"162px\">"
+      qrcodesvg: '<img src="/icon.png" width="162px" height="162px">'
     };
   },
   methods: {
@@ -137,40 +116,41 @@ export default {
         alert(error + "\n出现了一点偏差，相关部门正在处理。");
         console.log(error);
       }
-      // when user is not verified, use medal instead
-      this.userinfo = userdata.data;
-      var userHomePageUrl =
-        "https://m.okjike.com/user/" + this.userinfo.username;
-      if (!this.userinfo.isVerified) {
-        this.userinfo.verifyIcon = this.userinfo.medals[0].picUrl;
-        this.userinfo.verifyMessage = this.userinfo.medals[0].name
-          .toString()
-          .replace("“", "「")
-          .replace("”", "」");
+
+      try {
+        // when user is not verified, use medal instead
+        this.userinfo = userdata.data;
+        var userHomePageUrl = "https://m.okjike.com/user/" + this.userinfo.username;
+        if (!this.userinfo.isVerified) {
+          this.userinfo.verifyIcon = this.userinfo.medals[0].picUrl;
+          this.userinfo.verifyMessage = this.userinfo.medals[0].name.toString().replace("“", "「").replace("”", "」");
+        }
+        if (this.userinfo.statsCount.liked > 1e4) {
+          this.userinfo.statsCount.liked = (this.userinfo.statsCount.liked / 1e3).toFixed(1) + 'k';
+        }
+
+        // generate user qrcode
+        var qrcodeSvgString;
+        var qrcodeConfig = {
+          color: {
+            dark: "#02a9f3",
+            light: "#fff"
+          },
+          margin: 0,
+          width: 162
+        };
+
+        QRCode.toString(userHomePageUrl, qrcodeConfig, function(err, string) {
+          if (err) console.error(err);
+          console.log("Generated!");
+          qrcodeSvgString = string;
+        });
+        this.qrcodesvg = qrcodeSvgString;
+      } catch (error) {
+        alert(error + "\n出现了一点偏差，相关部门正在处理。");
+        console.log(error);
       }
 
-      this.userfollowslogan =
-        "下载即刻 App 搜索 👉 " + this.userinfo.screenName;
-      if (this.userfollowslogan.length > 30) {
-        this.userfollowslogan = this.userfollowslogan.substring(0, 30) + "...";
-      }
-
-      // generate user qrcode
-      var qrcodeConfig = {
-        color: {
-          dark: "#02a9f3",
-          light: "#fff"
-        },
-        margin: 0,
-        width: 162
-      };
-      var qrcodeSvgString;
-      QRCode.toString(userHomePageUrl, qrcodeConfig, function(err, string) {
-        if (err) console.error(err);
-        console.log("Generated!");
-        qrcodeSvgString = string;
-      });
-      this.qrcodesvg = qrcodeSvgString;
       this.loading = true;
     },
     onDownload() {
@@ -207,7 +187,7 @@ label {
   width: 1230px;
   height: 691px;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
   /* border: 1px solid black; */
   background-size: contain;
@@ -217,13 +197,12 @@ label {
 }
 
 #name-badge-canvas {
-  width: 1064px;
+  width: 1084px;
   height: 517px;
   border-radius: 30px;
   box-shadow: 0 0 60px rgba(40, 40, 40, 0.3);
   background-color: #fff;
   overflow: hidden;
-  background-image: url("");
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -313,15 +292,14 @@ label {
   top: 90px;
   right: -100px;
   transform: rotate(40deg);
-  padding: 9px 110px;
+  padding: 9px 120px;
   overflow: hidden;
   text-align: center;
 }
 
 .user-bottomright-container {
   position: absolute;
-  font-size: 21px;
-  bottom: 42px;
+  bottom: 32px;
   right: 56px;
   text-align: right;
 }
@@ -340,11 +318,11 @@ label {
 }
 
 .user-follow-slogan .name {
-  font-size: 21px;
+  font-size: 18px;
 }
 
 .user-follow-slogan .copyright {
-  font-size: 16px;
+  font-size: 14px;
   color: #b3b3b3;
 }
 
@@ -364,7 +342,6 @@ label {
   font-style: italic;
   font-size: 14px;
   color: #808080;
-  /* word-spacing: 5px; */
   padding: 15px 0;
 }
 
