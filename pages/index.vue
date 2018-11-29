@@ -20,9 +20,9 @@
             <div class="user-bottomleft-container">
               <div class="user-bio" v-html="userinfo.bio"></div>
               <div class="user-playground-container">
-                <div class="user-playground"># {{ form.userplayground1 }}</div>
-                <div class="user-playground"># {{ form.userplayground2 }}</div>
-                <div class="user-playground"># {{ form.userplayground3 }}</div>
+                <div class="user-playground"><i class="fa fa-circle-o" aria-hidden="true"></i> {{ form.userplayground1 }}</div>
+                <div class="user-playground"><i class="fa fa-circle-o" aria-hidden="true"></i> {{ form.userplayground2 }}</div>
+                <div class="user-playground"><i class="fa fa-circle-o" aria-hidden="true"></i> {{ form.userplayground3 }}</div>
               </div>
             </div>
             <img id="guoguo" src="~/assets/backgrounds/guoguo.png" alt="guoguo-guoguo">
@@ -86,7 +86,7 @@ export default {
       userinfo: {
         username: "4DDA0425-FB41-4188-89E4-952CA15E3C5E",
         screenName: "SpencerWoo",
-        bio: "🐱 啊呀，你发现了这个果果名片生成器！q(≧▽≦q)<br> 🦊 右边三个主题随便填哦 (*￣3￣)╭",
+        bio: "🐱 啊呀，你发现了这个果果名片生成器！q(≧▽≦q)<br> 🦊 右边三个圈子随便填哦 (*￣3￣)╭",
         isVerified: true,
         verifyMessage: "各种话题优秀贡献者 \\(￣︶￣*\\))",
         verifyIcon: "https://cdn.ruguoapp.com/jike-web/static/images/verified.6e5b91e.svg",
