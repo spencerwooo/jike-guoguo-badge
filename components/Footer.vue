@@ -9,6 +9,7 @@
 
 <style>
 .footer {
+  min-width: 1600px;
   padding: 50px;
   text-align: center;
   color: #fff;

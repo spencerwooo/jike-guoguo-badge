@@ -173,11 +173,10 @@ label {
 }
 
 .badge-content {
-  margin-left: 50px;
   min-height: 100vh;
   min-width: 1500px;
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   text-align: left;
   -webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.39, 0.575, 0.565, 1)
