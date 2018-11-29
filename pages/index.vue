@@ -108,7 +108,7 @@ export default {
       evt.preventDefault();
       this.loading = false;
       var jikeid = this.form.jikeid;
-      var jikeLittleApi = "http://tenkeyseven.com:9000/api/jike/";
+      var jikeLittleApi = "https://api.tenkeyseven.com/jike/ggb/";
       var userdata;
 
       // Test axios module
