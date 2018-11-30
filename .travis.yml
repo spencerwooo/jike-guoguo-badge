@@ -16,6 +16,9 @@ install:
 
 script:
   - yarn run generate
+  
+  #  Add CNAME record 'guoguo.spencerwoo.com' after each build
+  - echo "guoguo.spencerwoo.com" > dist/CNAME
 
 deploy:
   provider: pages
