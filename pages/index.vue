@@ -135,11 +135,11 @@ export default {
         if (this.userinfo.statsCount.liked > 1e4) {
           this.userinfo.statsCount.liked = (this.userinfo.statsCount.liked / 1e3).toFixed(1) + 'k';
         }
-        if (this.userinfo.statsCount.followed > 1e4) {
-          this.userinfo.statsCount.followed = '9999+';
+        if (this.userinfo.statsCount.followed > 1e5) {
+          this.userinfo.statsCount.followed = '99999+';
         }
-        if (this.userinfo.statsCount.following > 1e4) {
-          this.userinfo.statsCount.following = '9999+';
+        if (this.userinfo.statsCount.following > 1e5) {
+          this.userinfo.statsCount.following = '99999+';
         }
 
         // generate user qrcode
