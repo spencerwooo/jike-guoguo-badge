@@ -20,9 +20,9 @@
             <div class="user-bottomleft-container">
               <div class="user-bio" v-html="userinfo.bio"></div>
               <div class="user-playground-container">
-                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground.png" alt="Playground Icon"> {{ form.userplayground1 }}</div>
-                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground.png" alt="Playground Icon"> {{ form.userplayground2 }}</div>
-                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground.png" alt="Playground Icon"> {{ form.userplayground3 }}</div>
+                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground-dark.png" alt="Playground Icon"> {{ form.userplayground1 }}</div>
+                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground-dark.png" alt="Playground Icon"> {{ form.userplayground2 }}</div>
+                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground-dark.png" alt="Playground Icon"> {{ form.userplayground3 }}</div>
               </div>
             </div>
             <img id="guoguo" src="~/assets/backgrounds/guoguo.png" alt="guoguo-guoguo">
