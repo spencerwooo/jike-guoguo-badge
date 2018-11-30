@@ -254,7 +254,7 @@ label {
 .user-verified-container {
   font-size: 21px;
   vertical-align: middle;
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .user-like-info {
@@ -273,6 +273,7 @@ label {
 
 .user-bio {
   line-height: 1.6;
+  max-width: 700px;
 }
 
 .user-playground-container {
