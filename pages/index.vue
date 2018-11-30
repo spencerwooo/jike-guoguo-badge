@@ -20,9 +20,9 @@
             <div class="user-bottomleft-container">
               <div class="user-bio" v-html="userinfo.bio"></div>
               <div class="user-playground-container">
-                <div class="user-playground"><i class="fa fa-circle-o" aria-hidden="true"></i> {{ form.userplayground1 }}</div>
-                <div class="user-playground"><i class="fa fa-circle-o" aria-hidden="true"></i> {{ form.userplayground2 }}</div>
-                <div class="user-playground"><i class="fa fa-circle-o" aria-hidden="true"></i> {{ form.userplayground3 }}</div>
+                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground.png" alt="Playground Icon"> {{ form.userplayground1 }}</div>
+                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground.png" alt="Playground Icon"> {{ form.userplayground2 }}</div>
+                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground.png" alt="Playground Icon"> {{ form.userplayground3 }}</div>
               </div>
             </div>
             <img id="guoguo" src="~/assets/backgrounds/guoguo.png" alt="guoguo-guoguo">
@@ -275,6 +275,13 @@ label {
   margin-right: 12px;
   box-shadow: 0 0 40px rgba(40, 40, 40, 0.1);
   display: inline;
+}
+
+.playground-icons {
+  width: 20px;
+  vertical-align: middle; 
+  /* margin-right: 5px;  */
+  margin-bottom: 5px;
 }
 
 #guoguo {
