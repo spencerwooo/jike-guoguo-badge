@@ -124,11 +124,22 @@ export default {
         this.userinfo = userdata.data;
         var userHomePageUrl = "https://m.okjike.com/user/" + this.userinfo.username;
         if (!this.userinfo.isVerified) {
-          this.userinfo.verifyIcon = this.userinfo.medals[0].picUrl;
-          this.userinfo.verifyMessage = this.userinfo.medals[0].name.toString().replace("“", "「").replace("”", "」");
+          if (JSON.stringify(this.userinfo.medals) == '[]') {
+            this.userinfo.verifyIcon = "https://cdn.ruguoapp.com/resources/userProfile/medal_jike_parnter.png";
+            this.userinfo.verifyMessage = "一位透明的小同学";
+          } else {
+            this.userinfo.verifyIcon = this.userinfo.medals[0].picUrl;
+            this.userinfo.verifyMessage = this.userinfo.medals[0].name.toString().replace("“", "「").replace("”", "」");
+          }
         }
         if (this.userinfo.statsCount.liked > 1e4) {
           this.userinfo.statsCount.liked = (this.userinfo.statsCount.liked / 1e3).toFixed(1) + 'k';
+        }
+        if (this.userinfo.statsCount.followed > 1e4) {
+          this.userinfo.statsCount.followed = '9999+';
+        }
+        if (this.userinfo.statsCount.following > 1e4) {
+          this.userinfo.statsCount.following = '9999+';
         }
 
         // generate user qrcode
