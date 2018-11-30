@@ -36,6 +36,10 @@ module.exports = {
   plugins: [
   ],
 
+  // router: {
+  //   base: '/jike-guoguo-badge/'
+  // },
+
   /*
   ** Nuxt.js modules
   */
