@@ -1,0 +1,30 @@
+language: node_js
+
+sudo: required
+
+node_js: '10'
+
+branches:
+  only:
+    - master
+
+before_install: 
+  - export TZ='Asia/Shanghai'
+
+install:
+  - yarn install
+
+script:
+  - yarn run generate
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  name: $GIT_NAME
+  email: $GIT_EMAIL
+  keep-history: true
+  target-branch: gh-pages
+  on:
+    branch: master
