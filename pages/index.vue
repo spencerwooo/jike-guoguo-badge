@@ -238,10 +238,10 @@ label {
 
 .user-avatar-frame {
   position: absolute;
-  left: 39px;
-  top: 52px;
-  width: 152px;
-  height: 152px;
+  left: 42px;
+  top: 55px;
+  width: 145px;
+  height: 145px;
 }
 
 .user-avatar-image {
