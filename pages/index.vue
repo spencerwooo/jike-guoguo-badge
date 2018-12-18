@@ -4,6 +4,7 @@
       <div id="badge-canvas">
         <transition name="fade">
           <div id="name-badge-canvas" v-if="loading">
+            <img class="user-avatar-frame" src="~assets/backgrounds/christmas-avatar-frame.png" alt="Christmas Avatar">
             <div class="user-avatar">
               <img class="user-avatar-image" v-bind:src="userinfo.avatarImage" alt="User avatar">
             </div>
@@ -205,7 +206,8 @@ label {
   background-size: contain;
   background-repeat: repeat-x;
   background-position: center;
-  background-image: url("~assets/backgrounds/bg.png");
+  /* background-image: url("~assets/backgrounds/bg.png"); */
+  background-image: url("~assets/backgrounds/christmas-bg.png");
 }
 
 #name-badge-canvas {
@@ -232,6 +234,14 @@ label {
   background-color: #fff;
   box-shadow: 0 0 40px rgba(251, 223, 38, 0.3);
   background-size: contain;
+}
+
+.user-avatar-frame {
+  position: absolute;
+  left: 39px;
+  top: 52px;
+  width: 152px;
+  height: 152px;
 }
 
 .user-avatar-image {
