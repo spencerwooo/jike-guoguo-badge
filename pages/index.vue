@@ -4,26 +4,56 @@
       <div id="badge-canvas">
         <transition name="fade">
           <div id="name-badge-canvas" v-if="loading">
-            <img class="user-avatar-frame" src="~assets/backgrounds/christmas-avatar-frame.png" alt="Christmas Avatar">
+            <!-- Christmas special frame -->
+            <!-- <img
+              class="user-avatar-frame"
+              src="~assets/backgrounds/christmas-avatar-frame.png"
+              alt="Christmas Avatar"
+            > -->
             <div class="user-avatar">
               <img class="user-avatar-image" v-bind:src="userinfo.avatarImage" alt="User avatar">
             </div>
             <div class="user-info-container">
               <div class="user-name">{{ userinfo.screenName }}</div>
               <div class="user-verified-container">
-                <img v-bind:src="userinfo.verifyIcon" width="28px" style="vertical-align: middle; margin-right: 5px; margin-bottom: 8px;">
+                <img
+                  v-bind:src="userinfo.verifyIcon"
+                  width="28px"
+                  style="vertical-align: middle; margin-right: 5px; margin-bottom: 8px;"
+                >
                 <span>{{ userinfo.verifyMessage}}</span>
               </div>
-              <div class="user-like-info">
-               {{ userinfo.statsCount.following }} 关注 | {{ userinfo.statsCount.followed }} 粉丝 | {{ userinfo.statsCount.liked }} 赞同 | {{ userinfo.statsCount.editorPicked}} 次精选
-              </div>
+              <div
+                class="user-like-info"
+              >{{ userinfo.statsCount.following }} 关注 | {{ userinfo.statsCount.followed }} 粉丝 | {{ userinfo.statsCount.liked }} 赞同 | {{ userinfo.statsCount.editorPicked}} 次精选</div>
             </div>
             <div class="user-bottomleft-container">
               <div class="user-bio" v-html="userinfo.bio"></div>
               <div class="user-playground-container">
-                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground-dark.png" alt="Playground Icon"> {{ form.userplayground1 }}</div>
-                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground-dark.png" alt="Playground Icon"> {{ form.userplayground2 }}</div>
-                <div class="user-playground"><img class="playground-icons" src="~/assets/icons/playground-dark.png" alt="Playground Icon"> {{ form.userplayground3 }}</div>
+                <div class="user-playground">
+                  <img
+                    class="playground-icons"
+                    src="~/assets/icons/playground-dark.png"
+                    alt="Playground Icon"
+                  >
+                  {{ form.userplayground1 }}
+                </div>
+                <div class="user-playground">
+                  <img
+                    class="playground-icons"
+                    src="~/assets/icons/playground-dark.png"
+                    alt="Playground Icon"
+                  >
+                  {{ form.userplayground2 }}
+                </div>
+                <div class="user-playground">
+                  <img
+                    class="playground-icons"
+                    src="~/assets/icons/playground-dark.png"
+                    alt="Playground Icon"
+                  >
+                  {{ form.userplayground3 }}
+                </div>
               </div>
             </div>
             <img id="guoguo" src="~/assets/backgrounds/guoguo.png" alt="guoguo-guoguo">
@@ -45,13 +75,33 @@
         <h2 class="subtitle">Unofficial Jike GuoGuo name badge</h2>
         <form @submit="onSubmit" action="#" method="get">
           <br>
-          <label for="jike-name-input">Jike User Name</label><br>
-          <input id="jike-name-input" v-model="form.jikeid" type="text" placeholder="(｡･∀･)ﾉﾞ"><br>
+          <label for="jike-name-input">Jike User Name</label>
           <br>
-          <label for="jike-name-input">Jike Playgrounds</label><br>
-          <input id="jike-playground-input" v-model="form.userplayground1" type="text" placeholder="o(=•ェ•=)m"><br>
-          <input id="jike-playground-input" v-model="form.userplayground2" type="text" placeholder="( •̀ ω •́ )✧"><br>
-          <input id="jike-playground-input" v-model="form.userplayground3" type="text" placeholder="q(≧▽≦q)">
+          <input id="jike-name-input" v-model="form.jikeid" type="text" placeholder="(｡･∀･)ﾉﾞ">
+          <br>
+          <br>
+          <label for="jike-name-input">Jike Playgrounds</label>
+          <br>
+          <input
+            id="jike-playground-input"
+            v-model="form.userplayground1"
+            type="text"
+            placeholder="o(=•ェ•=)m"
+          >
+          <br>
+          <input
+            id="jike-playground-input"
+            v-model="form.userplayground2"
+            type="text"
+            placeholder="( •̀ ω •́ )✧"
+          >
+          <br>
+          <input
+            id="jike-playground-input"
+            v-model="form.userplayground3"
+            type="text"
+            placeholder="q(≧▽≦q)"
+          >
           <div class="buttons">
             <button id="generate-btn" type="submit" class="button--blue">即刻生成</button>
             <a href="https://github.com/spencerwooo/jike-guoguo-badge" class="button--grey">GitHub</a>
@@ -65,11 +115,11 @@
 </template>
 
 <script>
-import Footer from "~/components/Footer.vue";
-import axios from "axios";
-import QRCode from "qrcode";
-import domtoimage from "dom-to-image";
-import saveAs from "file-saver";
+import Footer from '~/components/Footer.vue'
+import axios from 'axios'
+import QRCode from 'qrcode'
+import domtoimage from 'dom-to-image'
+import saveAs from 'file-saver'
 
 export default {
   components: {
@@ -79,103 +129,112 @@ export default {
     return {
       loading: true,
       form: {
-        jikeid: "SpencerWoo",
-        userplayground1: "今日份的摄影",
-        userplayground2: "JitHub",
-        userplayground3: "即刻数码站"
+        jikeid: 'SpencerWoo',
+        userplayground1: '今日份的摄影',
+        userplayground2: 'JitHub',
+        userplayground3: '即刻数码站'
       },
       userinfo: {
-        username: "4DDA0425-FB41-4188-89E4-952CA15E3C5E",
-        screenName: "SpencerWoo",
-        bio: "🐱 啊呀，你发现了这个果果名片生成器！q(≧▽≦q)<br> 🦊 右边三个圈子随便填哦 (*￣3￣)╭",
+        username: '4DDA0425-FB41-4188-89E4-952CA15E3C5E',
+        screenName: 'SpencerWoo',
+        bio:
+          '🐱 啊呀，你发现了这个果果名片生成器！q(≧▽≦q)<br> 🦊 右边三个圈子随便填哦 (*￣3￣)╭',
         isVerified: true,
-        verifyMessage: "各种话题优秀贡献者 \\(￣︶￣*\\))",
-        verifyIcon: "https://cdn.ruguoapp.com/jike-web/static/images/verified.6e5b91e.svg",
+        verifyMessage: '各种话题优秀贡献者 \\(￣︶￣*\\))',
+        verifyIcon:
+          'https://cdn.ruguoapp.com/jike-web/static/images/verified.6e5b91e.svg',
         medals: [],
-        avatarImage: "https://cdn.ruguoapp.com/FtuW2cr-elNtq2O4EMQ1EZJFb4Pw.jpg?imageView2/0/w/300/h/300/q/100!",
+        avatarImage:
+          'https://cdn.ruguoapp.com/FtuW2cr-elNtq2O4EMQ1EZJFb4Pw.jpg?imageView2/0/w/300/h/300/q/100!',
         statsCount: {
-          followed: "500 万",
-          following: 374,
-          editorPicked: 73,
-          liked: '27.5k'
+          followed: '500 万',
+          following: '**',
+          editorPicked: '**',
+          liked: '**'
         },
-        registerTime: "好多"
+        registerTime: '好多'
       },
       qrcodesvg: '<img src="/icon.png" width="162px" height="162px">'
-    };
+    }
   },
   methods: {
     async onSubmit(evt) {
-      evt.preventDefault();
-      this.loading = false;
-      var jikeid = this.form.jikeid;
-      var jikeLittleApi = "https://api.tenkeyseven.com/jike/ggb/";
-      var userdata;
+      evt.preventDefault()
+      this.loading = false
+      var jikeid = this.form.jikeid
+      var jikeLittleApi = 'https://api.tenkeyseven.com/jike/ggb/'
+      var userdata
 
       // Test axios module
       try {
-        userdata = await axios.get(jikeLittleApi + jikeid);
+        userdata = await axios.get(jikeLittleApi + jikeid)
       } catch (error) {
-        alert(error + "\n出现了一点偏差，相关部门正在处理。");
-        console.log(error);
+        alert(error + '\n出现了一点偏差，相关部门正在处理。')
+        console.log(error)
       }
 
       try {
         // when user is not verified, use medal instead
-        this.userinfo = userdata.data;
-        var userHomePageUrl = "https://m.okjike.com/user/" + this.userinfo.username;
+        this.userinfo = userdata.data
+        var userHomePageUrl =
+          'https://m.okjike.com/user/' + this.userinfo.username
         if (!this.userinfo.isVerified) {
           if (JSON.stringify(this.userinfo.medals) == '[]') {
-            this.userinfo.verifyIcon = "https://cdn.ruguoapp.com/resources/userProfile/medal_jike_parnter.png";
-            this.userinfo.verifyMessage = "一位透明的小同学";
+            this.userinfo.verifyIcon =
+              'https://cdn.ruguoapp.com/resources/userProfile/medal_jike_parnter.png'
+            this.userinfo.verifyMessage = '一位透明的小同学'
           } else {
-            this.userinfo.verifyIcon = this.userinfo.medals[0].picUrl;
-            this.userinfo.verifyMessage = this.userinfo.medals[0].name.toString().replace("“", "「").replace("”", "」");
+            this.userinfo.verifyIcon = this.userinfo.medals[0].picUrl
+            this.userinfo.verifyMessage = this.userinfo.medals[0].name
+              .toString()
+              .replace('“', '「')
+              .replace('”', '」')
           }
         }
         if (this.userinfo.statsCount.liked > 1e4) {
-          this.userinfo.statsCount.liked = (this.userinfo.statsCount.liked / 1e3).toFixed(1) + 'k';
+          this.userinfo.statsCount.liked =
+            (this.userinfo.statsCount.liked / 1e3).toFixed(1) + 'k'
         }
         if (this.userinfo.statsCount.followed > 1e5) {
-          this.userinfo.statsCount.followed = '99999+';
+          this.userinfo.statsCount.followed = '99999+'
         }
         if (this.userinfo.statsCount.following > 1e5) {
-          this.userinfo.statsCount.following = '99999+';
+          this.userinfo.statsCount.following = '99999+'
         }
 
         // generate user qrcode
-        var qrcodeSvgString;
+        var qrcodeSvgString
         var qrcodeConfig = {
           color: {
-            dark: "#02a9f3",
-            light: "#fff"
+            dark: '#02a9f3',
+            light: '#fff'
           },
           margin: 0,
           width: 162
-        };
+        }
 
         QRCode.toString(userHomePageUrl, qrcodeConfig, function(err, string) {
-          if (err) console.error(err);
-          console.log("Generated!");
-          qrcodeSvgString = string;
-        });
-        this.qrcodesvg = qrcodeSvgString;
+          if (err) console.error(err)
+          console.log('Generated!')
+          qrcodeSvgString = string
+        })
+        this.qrcodesvg = qrcodeSvgString
       } catch (error) {
-        alert(error + "\n出现了一点偏差，相关部门正在处理。");
-        console.log(error);
+        alert(error + '\n出现了一点偏差，相关部门正在处理。')
+        console.log(error)
       }
 
-      this.loading = true;
+      this.loading = true
     },
     onDownload() {
       // save image to device
-      var finalBadge = document.getElementById("badge-canvas");
+      var finalBadge = document.getElementById('badge-canvas')
       domtoimage.toPng(finalBadge).then(function(blob) {
-        window.saveAs(blob, "jike-guoguo-badge.png");
-      });
+        window.saveAs(blob, 'jike-guoguo-badge.png')
+      })
     }
   }
-};
+}
 </script>
 
 <style>
@@ -206,8 +265,8 @@ label {
   background-size: contain;
   background-repeat: repeat-x;
   background-position: center;
-  /* background-image: url("~assets/backgrounds/bg.png"); */
-  background-image: url("~assets/backgrounds/christmas-bg.png");
+  background-image: url("~assets/backgrounds/bg.png");
+  /* background-image: url('~assets/backgrounds/christmas-bg.png'); */
 }
 
 #name-badge-canvas {
@@ -225,8 +284,11 @@ label {
 }
 
 .user-avatar {
-  width: 108px;
-  height: 108px;
+  /* Christmas special width and height */
+  /* width: 108px;
+  height: 108px; */
+  width: 114px;
+  height: 114px;
   float: left;
   margin: 66px 0 0 56px;
   border: #fbdf26 solid 2px;
@@ -236,18 +298,22 @@ label {
   background-size: contain;
 }
 
-.user-avatar-frame {
+/* Christmas special frame */
+/* .user-avatar-frame {
   position: absolute;
   left: 42px;
   top: 55px;
   width: 145px;
   height: 145px;
-}
+} */
 
 .user-avatar-image {
   border-radius: 52px;
-  width: 104px;
-  height: 104px;
+  width: 110px;
+  height: 110px;
+  /* Christmas special width and height */
+  /* width: 104px;
+  height: 104px; */
 }
 
 .user-info-container {
@@ -301,7 +367,7 @@ label {
 
 .playground-icons {
   width: 20px;
-  vertical-align: middle; 
+  vertical-align: middle;
   /* margin-right: 5px;  */
   margin-bottom: 5px;
 }
