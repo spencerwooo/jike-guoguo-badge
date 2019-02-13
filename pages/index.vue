@@ -161,9 +161,9 @@ export default {
     async onSubmit(evt) {
       evt.preventDefault()
       this.loading = false
-      var jikeid = this.form.jikeid
-      var jikeLittleApi = 'https://api.tenkeyseven.com/jike/ggb/'
-      var userdata
+      let jikeid = this.form.jikeid
+      let jikeLittleApi = 'https://api.tenkeyseven.com/jike/ggb/'
+      let userdata
 
       // Test axios module
       try {
@@ -176,7 +176,7 @@ export default {
       try {
         // when user is not verified, use medal instead
         this.userinfo = userdata.data
-        var userHomePageUrl =
+        let userHomePageUrl =
           'https://m.okjike.com/user/' + this.userinfo.username
         if (!this.userinfo.isVerified) {
           if (JSON.stringify(this.userinfo.medals) == '[]') {
@@ -203,8 +203,8 @@ export default {
         }
 
         // generate user qrcode
-        var qrcodeSvgString
-        var qrcodeConfig = {
+        let qrcodeSvgString
+        let qrcodeConfig = {
           color: {
             dark: '#02a9f3',
             light: '#fff'
@@ -228,7 +228,7 @@ export default {
     },
     onDownload() {
       // save image to device
-      var finalBadge = document.getElementById('badge-canvas')
+      let finalBadge = document.getElementById('badge-canvas')
       domtoimage.toPng(finalBadge).then(function(blob) {
         window.saveAs(blob, 'jike-guoguo-badge.png')
       })
