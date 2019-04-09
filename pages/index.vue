@@ -129,7 +129,7 @@ export default {
     return {
       loading: true,
       form: {
-        jikeid: 'SpencerWoo',
+        jikeid: 'SPNCR',
         userplayground1: '今日份的摄影',
         userplayground2: 'JitHub',
         userplayground3: '即刻数码站'
@@ -145,7 +145,7 @@ export default {
           'https://cdn.ruguoapp.com/jike-web/static/images/verified.6e5b91e.svg',
         medals: [],
         avatarImage:
-          'https://cdn.ruguoapp.com/FtuW2cr-elNtq2O4EMQ1EZJFb4Pw.jpg?imageView2/0/w/300/h/300/q/100!',
+          'https://cdn.ruguoapp.com/FiktHWVDGf1XCdosXiLW0xSOWxfe.jpg',
         statsCount: {
           followed: '500 万',
           following: '**',
