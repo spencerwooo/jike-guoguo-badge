@@ -162,7 +162,7 @@ export default {
       evt.preventDefault()
       this.loading = false
       let jikeid = this.form.jikeid
-      let jikeLittleApi = 'https://api.tenkeyseven.com/jike/ggb/'
+      let jikeLittleApi = 'https://jike-guoguo-backend.herokuapp.com/api/jike/'
       let userdata
 
       // Test axios module
