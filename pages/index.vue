@@ -142,10 +142,10 @@ export default {
         isVerified: true,
         verifyMessage: '各种话题优秀贡献者 \\(￣︶￣*\\))',
         verifyIcon:
-          'https://cdn.ruguoapp.com/jike-web/static/images/verified.6e5b91e.svg',
+          'https://i.loli.net/2019/04/10/5cad5f8e7beeb.png',
         medals: [],
         avatarImage:
-          'https://cdn.ruguoapp.com/FiktHWVDGf1XCdosXiLW0xSOWxfe.jpg',
+          'https://i.loli.net/2019/04/10/5cad5d451e657.jpg',
         statsCount: {
           followed: '500 万',
           following: '**',
