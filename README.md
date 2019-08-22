@@ -1,13 +1,15 @@
 ![](https://i.loli.net/2018/11/26/5bfba92262d75.jpg)
 
-# 即刻非官方果果名片生成器
+# 即刻非官方果果名片生成器（已失效）
 
 ![](https://img.shields.io/badge/Nuxt.js-2.0.0-green.svg?style=flat-square)
-[![GitHub stars](https://img.shields.io/github/stars/spencerwooo/jike-guoguo-badge.svg?style=flat-square&label=stars)](https://github.com/spencerwoo/jike-guoguo-badge)
+[![GitHub stars](https://img.shields.io/github/stars/spencerwooo/jike-guoguo-badge.svg?style=flat-square&label=Stars)](https://github.com/spencerwoo/jike-guoguo-badge)
 ![love](https://img.shields.io/badge/Made%20with-love-ff69b4.svg?style=flat-square)
 [![License MIT](https://img.shields.io/badge/License-MIT-03A9F4.svg?style=flat-square)](https://github.com/spencerwooo/jike-guoguo-badge/blob/master/LICENSE)
 
-> **Custom Jike name badge, meow.** 🐱
+> **Jike main website is down, thus Jike GuoGuo Badge is not available until further notice.**
+>
+> Custom Jike name badge, meow. 🐱
 
 ## Build Setup
 
